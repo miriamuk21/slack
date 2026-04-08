@@ -1,5 +1,13 @@
 {
-  "dependencies": {
+"name": "y",
+"description": "slack",
+"main": "index.js",
+"scripts": {
+  "start": "node app.js"
+},
+"author": "",
+"license": "ISC",
+"dependencies": {
     "@slack/web-api": "^7.15.0"
   }
 }
