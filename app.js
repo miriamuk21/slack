@@ -10,7 +10,7 @@ try {
   // Call the chat.postMessage method using the WebClient
   const result = await client.chat.postMessage({
     channel: channelId,
-    text: "Hello world from my remote server"
+    text: "Testing end-to-end"
   });
 
   console.log(result);
