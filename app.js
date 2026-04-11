@@ -3,7 +3,7 @@ var CronJob = require('cron').CronJob;
 
 //Requere the mongodb package
 const { MongoClient } = require('mongodb');
-const mongouri = "mongodb+srv://miriamsmedium:pelu212121@mediumapp.e4q9knm.mongodb.net/?appName=mediumapp"
+const mongouri = "mongodb+srv://miriamsmedium:pelu212121@mediumapp.e4q9knm.mongodb.net/mediumapp?retryWrites=true&w=majority"
 let joke;// the joke parameter will hold our message data
 
 // Require the Node Slack SDK package (github.com/slackapi/node-slack-sdk)
@@ -26,7 +26,7 @@ var job = new CronJob('50 05 * * SAT', function() {
         try {
             // Connect the client to the server
             await mongoClient.connect();
-            let db = mongoClient.db('slackapp')//set the reference to the connected slackapp database as db
+            let db = mongoClient.db('mediumapp')//set the reference to the connected slackapp database as db
             
             //get the joke data
             let messagesCollection = db.collection('messages')// set the reference to the messages collection as messagesCollection
