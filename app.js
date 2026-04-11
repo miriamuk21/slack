@@ -2,8 +2,8 @@
 var CronJob = require('cron').CronJob;
 
 //Requere the mongodb package
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://miriamsmedium:<db_password>@mediumapp.e4q9knm.mongodb.net/?appName=mediumapp";
+const { MongoClient } = require('mongodb');
+const mongouri = "mongodb://miriamsmedium:pelu212121@ac-jqv7blz-shard-00-00.e4q9knm.mongodb.net:27017,ac-jqv7blz-shard-00-01.e4q9knm.mongodb.net:27017,ac-jqv7blz-shard-00-02.e4q9knm.mongodb.net:27017/?ssl=true&replicaSet=atlas-c2waqe-shard-0&authSource=admin&appName=mediumapp"
 let joke;// the joke parameter will hold our message data
 
 // Require the Node Slack SDK package (github.com/slackapi/node-slack-sdk)
@@ -15,33 +15,17 @@ const client = new WebClient("xoxb-3687547720391-10858503901763-gxLHeUKT1jI4Ct44
 const channelId = "U03LK6P4ZPF";
 
 
-var job = new CronJob('29 07 * * SAT', function() {
+var job = new CronJob('48 07 * * SAT', function() {
  //OUR CODE FOR SENDING A MESSAGE
     (async () => {
 
     // Create a new MongoClient
-         const client = new MongoClient(uri, {
-        serverApi: {
-          version: ServerApiVersion.v1,
-          strict: true,
-          deprecationErrors: true,
-        }
-      });
-      async function run() {
+      let mongoClient = new MongoClient(mongouri, {
+        useUnifiedTopology: true 
+        })
         try {
-          // Connect the client to the server	(optional starting in v4.7)
-          await client.connect();
-          // Send a ping to confirm a successful connection
-          await client.db("slackapp").command({ ping: 1 });
-          console.log("Pinged your deployment. You successfully connected to MongoDB!");
-        } finally {
-          // Ensures that the client will close when you finish/error
-          await client.close();
-            }
-}
-run().catch(console.dir);
             // Connect the client to the server
-            await client.connect();
+            await mongoClient.connect();
             let db = mongoClient.db('slackapp')//set the reference to the connected slackapp database as db
             
             //get the joke data
