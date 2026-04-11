@@ -10,14 +10,35 @@ const client = new WebClient("xoxb-3687547720391-10858503901763-gxLHeUKT1jI4Ct44
 const channelId = "U03LK6P4ZPF";
 
 
-var job = new CronJob('33 00 * * SAT', function() {
+var job = new CronJob('53 00 * * SAT', function() {
  //OUR CODE FOR SENDING A MESSAGE
     (async () => {
     try {
       // Call the chat.postMessage method using the WebClient
       const result = await client.chat.postMessage({
         channel: channelId,
-        text: "Testing end-to-end with custom timing"
+        text: "Testing end-to-end with custom timing",
+        	"blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "* - Why did my Exotic Bird Startup Store fail?*"
+              }
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": " - I didn't have enough seed money."
+              }
+            },
+            {
+              "type": "image",
+              "image_url": "https://cdn.pixabay.com/photo/2017/08/09/15/32/jokers-2614901_1280.jpg",
+              "alt_text": "delicious tacos"
+            }
+          ]
       });
 
       console.log(result);
