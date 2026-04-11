@@ -10,14 +10,14 @@ const client = new WebClient("xoxb-3687547720391-10858503901763-gxLHeUKT1jI4Ct44
 const channelId = "U03LK6P4ZPF";
 
 
-var job = new CronJob('* * * * *', function() {
+var job = new CronJob('33 00 * * SAT', function() {
  //OUR CODE FOR SENDING A MESSAGE
     (async () => {
     try {
       // Call the chat.postMessage method using the WebClient
       const result = await client.chat.postMessage({
         channel: channelId,
-        text: "Testing end-to-end"
+        text: "Testing end-to-end with custom timing"
       });
 
       console.log(result);
