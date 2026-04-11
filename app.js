@@ -3,7 +3,7 @@ var CronJob = require('cron').CronJob;
 
 //Requere the mongodb package
 const { MongoClient } = require('mongodb');
-const mongouri = "mongodb+srv://miriamsmedium:pelu2121@mediumapp.e4q9knm.mongodb.net/slackapp"
+const mongouri = "mongodb+srv://miriamsmedium:pelu212121@mediumapp.e4q9knm.mongodb.net/slackapp"
 let joke;// the joke parameter will hold our message data
 
 // Require the Node Slack SDK package (github.com/slackapi/node-slack-sdk)
