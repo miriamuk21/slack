@@ -1,1 +1,1 @@
-{"name":"y","description":"slack","main":"index.js","scripts":{"start":"node app.js"},"author":"","license":"ISC","dependencies":{"@slack/web-api":"^7.15.0","cron":"^4.4.0"}}
+{"name":"y","description":"slack","main":"index.js","scripts":{"start":"node app.js"},"author":"","license":"ISC","dependencies":{"@slack/web-api":"^7.15.0","cron":"^4.4.0","mongodb":"^7.1.1"}}
