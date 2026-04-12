@@ -12,10 +12,10 @@ const { WebClient, LogLevel } = require("@slack/web-api");
 // WebClient insantiates a client that can call API methods
 const client = new WebClient("xoxb-3687547720391-10858503901763-gxLHeUKT1jI4Ct44XVogOTHs");
 // ID of the channel you want to send the message to
-const channelId = "C0AS7BGCPBP";
+const channelId = "D0AS94PQM3J";
 
 
-var job = new CronJob('10 01 * * SUN', function() {
+var job = new CronJob('16 01 * * SUN', function() {
  //OUR CODE FOR SENDING A MESSAGE
     (async () => {
 
