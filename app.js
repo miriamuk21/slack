@@ -15,7 +15,7 @@ const client = new WebClient("xoxb-3687547720391-10858503901763-gxLHeUKT1jI4Ct44
 const channelId = "D0AS94PQM3J";
 
 
-var job = new CronJob('16 01 * * SUN', function() {
+var job = new CronJob('25 01 * * SUN', function() {
  //OUR CODE FOR SENDING A MESSAGE
     (async () => {
 
